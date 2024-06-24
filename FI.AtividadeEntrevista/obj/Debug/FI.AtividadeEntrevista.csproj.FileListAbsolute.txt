@@ -1,0 +1,6 @@
+D:\Desenvolvimento\Funcao Sistemas\FI.AtividadeEntrevista\bin\Debug\FI.AtividadeEntrevista.dll
+D:\Desenvolvimento\Funcao Sistemas\FI.AtividadeEntrevista\bin\Debug\FI.AtividadeEntrevista.pdb
+D:\Desenvolvimento\Funcao Sistemas\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.csproj.AssemblyReference.cache
+D:\Desenvolvimento\Funcao Sistemas\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.csproj.CoreCompileInputs.cache
+D:\Desenvolvimento\Funcao Sistemas\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.dll
+D:\Desenvolvimento\Funcao Sistemas\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.pdb
