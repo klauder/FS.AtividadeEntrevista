@@ -1,0 +1,97 @@
+﻿@model WebAtividadeEntrevista.Models.ClienteModel
+
+@{
+    ViewBag.Title = "Beneficiarios";
+}
+
+@section scripts{
+
+    <script>
+        var obj = @Html.Raw(Json.Encode(Model));
+    </script>
+}
+
+<style>
+    #btn-incluir {
+        margin-top: 25px !important;
+    }
+</style>
+
+<div class="container">
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalBeneficiarios" role="dialog">
+        <div class="modal-dialog  modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">@ViewBag.Title</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form id="formBeneficiario">
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="CPF">CPF:</label>
+                                    <input required="required" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" type="text" class="form-control" id="CPF" name="CPF" placeholder="Ex.: 999.999.999-99" maxlength="14">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Nome">Nome:</label>
+                                    <input required="required" type="text" class="form-control " id="Nome" name="Nome" placeholder="Ex.: João" maxlength="50">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 text-left">
+                                <input type="submit" id="btn-incluir" data-id="0" class="btn btn-success" value="Incluir" />
+                            </div>
+
+                        </div>
+                        <br />
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <table class="table table-hover table-condensed" id="tbBeneficiarios">
+                                    <tr>
+                                        <th>
+                                            CPF
+                                        </th>
+                                        <th>
+                                            Nome
+                                        </th>
+                                        <th>Ações</th>
+                                    </tr>
+
+                                    @foreach (var item in Model.Beneficiarios)
+                                    {
+                                        <tr id="@item.Id">
+                                            <td width="30%">
+                                                @item.CPF
+                                            </td>
+                                            <td width="40%">
+                                                @item.Nome
+                                            </td>
+                                            <td width="30%" class="text-left">
+                                                <button type="button" id="btn-alterar" onclick="alterar(this)" class="btn btn-sm btn-primary" data-id="@item.Id" data-cpf="@item.CPF" data-nome="@item.Nome">Alterar</button>
+                                                <button type="button" id="btn-excluir" onclick="excluir(this)" class="btn btn-sm btn-primary" data-id="@item.Id" data-cpf="@item.CPF" >Excluir</button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </table>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
